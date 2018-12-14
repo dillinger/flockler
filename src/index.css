@@ -3,4 +3,9 @@ body {
   color: #4E4A4E;
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 400;
+  min-width: 320px;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
 }

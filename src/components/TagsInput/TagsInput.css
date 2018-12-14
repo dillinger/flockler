@@ -1,0 +1,37 @@
+.tags {
+  margin: auto;
+  width: 80%;
+}
+
+.tags__input {
+  border: none;
+  font-size: 2rem;
+  width: 100%;
+  font-weight: 200;
+}
+
+.tags__input::placeholder {
+  color: #eee;
+}
+
+.tags__wrapper {
+  display: flex;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  border-radius: 20px
+}
+
+.tags__button-clear {
+  border: none;
+  cursor: pointer;
+  width: 60px;
+  font-size: 2rem;
+  color: #cfcfcf;
+  background-color: #fff;
+  font-weight: 200;
+}
+
+.tags__button-clear:hover {
+  color: #000;
+}

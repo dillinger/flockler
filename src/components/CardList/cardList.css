@@ -1,0 +1,50 @@
+.c-card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  height: 300px;
+}
+
+.card__img {
+  display: block;
+  width: 100%;
+}
+
+.card:hover .card__user {
+  bottom: 0;
+}
+
+.card__user {
+  bottom: -100px;
+  left: 0;
+  font-size: 12px;
+  transition: bottom .1s ease;
+  width: 100%;
+  align-items:center;
+  position: absolute;
+  display: flex;
+  box-sizing: border-box;
+  padding: 10px;
+  color: #fff;
+  background-image:
+    linear-gradient(
+      rgba(255,255,255, 0), rgba(0, 0, 0, .4)
+    );
+}
+
+.card__avatar {
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.card-twitter {
+  background-color: #fff;
+  min-height: 300px;
+}

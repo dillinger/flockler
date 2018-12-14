@@ -1,0 +1,14 @@
+.page-content {
+  margin: auto;
+  width: 80%;
+}
+
+@media screen and (max-width: 350px) {
+  .page-content {
+    width: inherit;
+  }
+}
+
+.page-content > * + * {
+  padding-top: 40px;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { checkJsonType, catchErrors } from "../../utils";
 import "./fetchData.css";
+
+// import { checkJsonType, catchErrors } from "../../utils";
 
 import response from "../../response.json";
 
@@ -15,11 +16,21 @@ export default class FetchData extends Component {
   }
 
   componentDidMount() {
-    console.log(response.articles);
+    // fetch("https://api.flockler.com/v1/sites/5437/articles")
+    //   .then(checkJsonType)
+    //   .then(response => {
+    //     this.setState((state, props) => ({
+    //       response: response,
+    //       articles: this.transformResponse(response.articles),
+    //       isFetching: false
+    //     }));
+    //     return response;
+    //   })
+    //   .catch(catchErrors);
 
     this.setState((state, props) => ({
       response: response,
-      articles: this.filterData(response.articles),
+      articles: this.transformResponse(response.articles),
       isFetching: false
     }));
   }
@@ -41,7 +52,7 @@ export default class FetchData extends Component {
           })
         : rawArticles
     }));
-  }
+  };
 
   filterByType(typeName) {
     return response => {
@@ -58,10 +69,10 @@ export default class FetchData extends Component {
   }
 
   replaceHash(str) {
-    return str.replace(/\#/, "");
+    return str.replace(/#/, "");
   }
 
-  filterData(response) {
+  transformResponse(response) {
     return response.map(item => {
       const {
         attachments,
@@ -91,7 +102,11 @@ export default class FetchData extends Component {
     });
     return (
       <div className="page-content">
-        {this.state.isFetching ? null : this.props.children(propsToPass)}
+        {this.state.isFetching ? (
+          <div>Loading...</div>
+        ) : (
+          this.props.children(propsToPass)
+        )}
       </div>
     );
   }

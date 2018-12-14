@@ -5,19 +5,19 @@ export default class TagsInput extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: ''
-    }
+      value: ""
+    };
   }
 
-  handleChange = (event) => {
-    this.setState({value: event.target.value});
+  handleChange = event => {
+    this.setState({ value: event.target.value });
     this.props.findByTag(event.target.value);
-  }
+  };
 
   clearInputValue = () => {
-    this.setState({ value: '' });
-    this.props.findByTag('');
-  }
+    this.setState({ value: "" });
+    this.props.findByTag("");
+  };
 
   render() {
     return (
@@ -31,7 +31,12 @@ export default class TagsInput extends Component {
               value={this.state.value}
               placeholder="#nyc"
             />
-            <button onClick={this.clearInputValue} className="tags__button-clear">X</button>
+            <button
+              onClick={this.clearInputValue}
+              className="tags__button-clear"
+            >
+              X
+            </button>
           </div>
         </div>
       </React.Fragment>

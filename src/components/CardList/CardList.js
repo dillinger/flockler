@@ -8,13 +8,14 @@ export function CardInstagram(props) {
     username
   } = props.attachments.instagram_item;
   const bgImage = {
-    backgroundImage: `url(${props.cover_url})`,
+    background: `url(${props.cover_url}) no-repeat center center`,
     backgroundSize: `cover`
   };
   return (
     <React.Fragment>
-      <a href={props.full_url}>
-        <div className="card" style={bgImage}>
+      <div className="card">
+        <a className="card__link" href={props.full_url}>
+          <div className="card__background-image" style={bgImage}></div>
           <div className="card__user">
             <img
               className="card__avatar"
@@ -28,8 +29,8 @@ export function CardInstagram(props) {
               <div className="card__caption">{caption}</div>
             </div>
           </div>
-        </div>
-      </a>
+        </a>
+      </div>
     </React.Fragment>
   );
 }
